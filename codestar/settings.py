@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
     'blog',
 ]
 
@@ -89,21 +90,15 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # }
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': dj_database_url.parse(os.environ.get("postgresql://neondb_owner:npg_dXB1U7lvPqjT@ep-gentle-rain-agbvholk.c-2.eu-central-1.aws.neon.tech/swoop_perm_chief_165735
+"))
 }
+
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"
 ]
 
-database_url = os.environ.get("DATABASE_URL")
-if database_url:
-    DATABASES["default"] = dj_database_url.parse(
-        database_url, conn_max_age=600, ssl_require=True
-    )
     
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
