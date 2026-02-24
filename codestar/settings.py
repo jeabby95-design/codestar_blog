@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("postgresql://neondb_owner:npg_dXB1U7lvPqjT@ep-gentle-rain-agbvholk.c-2.eu-central-1.aws.neon.tech/swoop_perm_chief_165735"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
