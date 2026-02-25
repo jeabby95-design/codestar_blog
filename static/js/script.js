@@ -1,0 +1,1 @@
+console.log("God is soo good!Life is beautiful!");
